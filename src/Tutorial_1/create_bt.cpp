@@ -1,4 +1,4 @@
-#include "action_nodes.cpp"
+#include "create_bt_nodes.cpp"
 
 int main(){
 
@@ -15,10 +15,11 @@ int main(){
   factory.registerSimpleAction("CloseGripper", std::bind(&GripperInterface::close, &gripper));
 
   // Após os TreeNodes terem sido registrados, carregaremos o arquivo XML 
-  auto tree = factory.createTreeFromFile("../src/my_tree.xml");
+  auto tree = factory.createTreeFromFile("../src/Tutorial_1/my_tree.xml");
 
   // Para "executar" a árvore, precisamos fazer um "tick" nela
   tree.tickRoot();
-  
+  std::cout << "end" << std::endl;
+   
   return 0;
 }
