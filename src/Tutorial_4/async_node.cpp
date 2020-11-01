@@ -4,7 +4,7 @@
 // Uma Action Assincrona poderá retornar RUNNING, e será executada em outra thread
 class MoveBaseAction : public BT::AsyncActionNode {
   public:
-    MoveBaseAction(const std::string &name, const BT::NodeConfiguration config) 
+    MoveBaseAction(const std::string &name, const BT::NodeConfiguration &config) 
       : BT::AsyncActionNode(name, config) {
     }
 

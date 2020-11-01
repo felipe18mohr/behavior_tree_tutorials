@@ -20,3 +20,6 @@ target_link_libraries(sequences BT::behaviortree_cpp_v3)
 
 add_executable(crossdoor src/Tutorial_5/crossdoor.cpp)
 target_link_libraries(crossdoor BT::behaviortree_cpp_v3)
+
+add_executable(ports_remapping src/Tutorial_6/ports_remapping.cpp)
+target_link_libraries(ports_remapping BT::behaviortree_cpp_v3)
