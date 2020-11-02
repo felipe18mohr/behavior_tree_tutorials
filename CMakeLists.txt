@@ -26,3 +26,6 @@ target_link_libraries(ports_remapping BT::behaviortree_cpp_v3)
 
 add_executable(wrapping_legacy src/Tutorial_7/wrapping_legacy.cpp)
 target_link_libraries(wrapping_legacy BT::behaviortree_cpp_v3)
+
+add_executable(additional_args src/Tutorial_8/additional_arguments.cpp)
+target_link_libraries(additional_args BT::behaviortree_cpp_v3)
