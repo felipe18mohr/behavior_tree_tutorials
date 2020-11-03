@@ -29,3 +29,6 @@ target_link_libraries(wrapping_legacy BT::behaviortree_cpp_v3)
 
 add_executable(additional_args src/Tutorial_8/additional_arguments.cpp)
 target_link_libraries(additional_args BT::behaviortree_cpp_v3)
+
+add_executable(coroutines src/Tutorial_9/coroutines.cpp)
+target_link_libraries(coroutines BT::behaviortree_cpp_v3)
