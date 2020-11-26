@@ -1,5 +1,7 @@
 # behavior_tree_tutorials
+
 ![Behavior Tree](img/behavior_tree.jpeg)
+
 A Behavior Tree (ou Árvore de Comportamento) é um modelo para estruturar tomadas de decisão (Task Switching Structure), criado inicialmente para a área de robótica, mas também amplamente utilizado na indústria de jogos, para desenvolvimento da Inteligência Artificial das entidades dos games. 
 
 ## Vantagens da Behavior Tree
@@ -16,9 +18,11 @@ Posteriormente será realizada uma comparação entre a Behavior Tree (BT) e a F
 
 ## Exemplo prático
 Podemos tomar como exemplo um robô, que tenha por objetivo ir de um ponto A até um ponto B, pegar um objeto, e então entregá-lo em um ponto C. Assim, esta seria uma Árvore de Comportamento simplificada para executar esse objetivo: 
+
 ![Behavior Tree](img/exemplo1.jpeg)
 
 Entretanto, precisamos fazer com que o robô pegue o objeto. Podemos então criar uma subárvore, que especifica como realizar essa tarefa: primeiro, abra o seu gripper, então aproxime-se do objeto e, finalmente, feche seu gripper, para segurá-lo. Com essa subárvore, a estrutura da árvore seria a seguinte: 
+
 ![Behavior Tree](img/exemplo2.jpeg)
 
 Percebe-se que, ao utilizar a Árvore de Comportamentos, podemos detalhar cada uma das ações a serem executadas, e isso nos faz sempre pensar em todas as possiblidades. Note também que, através da representação gráfica, todo o sistema torna-se de fácil entendimento. Além disso, a subárvore responsável por pegar o objeto pode facilmente ser utilizada em outros projetos, e podemos também adicionar, retirar, ou modificar Nós e Subárvores da forma que quisermos, tornando as Behavior Trees bastante flexíveis. 
@@ -39,6 +43,7 @@ Existem 4 tipos de TreeNode:
 Nós de Controle possuem um ou mais nós filhos. Quando ele é executado (dizemos que foi feito um “tick”), ele propaga essa execução (o "tick") para seus Nós filhos (os que estão abaixo dele na hierarquia), e retorna o valor RUNNING enquanto esses filhos ainda estiverem sendo executados. Existem dois tipos principais de Nós de Controle, determinado de acordo com a forma que se deseja controlar os Nós Filhos: 
 
 #### SequenceNodes
+
 ![SequenceNode](img/sequencebasic.png)
 Os filhos desse Nó de Controle serão sempre executados em ordem (na representação gráfica acima, da esquerda para a direita), de forma que:  
 1. Quando um filho for executado, se ele retornar SUCCESS, o próximo filho será executado;  
@@ -57,7 +62,9 @@ _"Restart"_ significa que, da próxima vez que a Sequência receber um tick, tod
 _"Tick Again"_ significa que, da próxima vez que a Sequência receber um tick, os Nós Filhos que já retornaram SUCCESS antes não serão executados novamente. O Nó que retornou RUNNING anteriormente continuará rodando de forma assíncrona, até que seja concluído
 
 #### FallbackNodes
+
 ![FallbackNode](img/fallbackbasic.png)
+
 Os filhos desse Nó de Controle serão executados (também em ordem) até que um deles retorne SUCCESS, funcionando da seguinte forma: 
 1. Quando um filho for executado, se ele retorna FAILURE, o próximo filho será executado; 
 2. Se o filho retornar SUCCESS, o Fallback será encerrado e retornará SUCCESS; 
@@ -72,7 +79,9 @@ Assim como os SequenceNodes, também há subcategorias:
 
 
 ### DecoratorNodes
+
 ![DecoratorNodes](img/decorators.png)
+
 Podem ter somente um único filho, e adicionam flexibilidade ou controle a uma Ação (a do seu filho), sem modificá-la diretamente. Os tipos de Decorators são: 
 - **InverterNode:** Inverte o resultado retornado pelo seu filho: se foi FAILURE, ele retornar1. SUCCESS, e vice-versa. Nós que retornem o valor RUNNING serão mantidos; 
 - **ForceSuccessNode:** Se o estado do filho não for RUNNING, ele retornará SUCCESS; 
