@@ -4,6 +4,11 @@
 
 A Behavior Tree (ou Árvore de Comportamento) é um modelo para estruturar tomadas de decisão (Task Switching Structure), criado inicialmente para a área de robótica, mas também amplamente utilizado na indústria de jogos, para desenvolvimento da Inteligência Artificial das entidades dos games. 
 
+#### Documentação e repositórios oficiais
+**Github Behavior Tree:** [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP)
+**Github Groot:** [Groot](https://github.com/BehaviorTree/Groot)
+**Documentação:** [behaviortree.dev](https://www.behaviortree.dev/)
+
 ## Vantagens da Behavior Tree
 Dentre as vantagens de se utilizar uma árvore de comportamento em comparação a outros métodos de Task Switching Structure (como a Máquina de Estados, por exemplo), estão:  
 
@@ -97,4 +102,16 @@ São Folhas da Árvore, o que quer dizer que não possuem nenhum filho, estando 
 ### ConditionNodes
 Assim como os ActionNodes, também são Folhas da Árvore, e devem ser implementados pelo usuário. Esses Nós não executam nenhuma tarefa, e retornam SUCCESS caso uma determinada condição seja atendida, e FAILURE caso não seja atendida. Esses Nós são sempre síncronos, ou seja, nunca retornam RUNNING. 
 
- 
+## Behavior Tree Vs. Finite State Machine
+Em comparação a outros modelos de Estrutura de Tomada de Decisões, como por exemplo a Máquina de Estados, a Árvore de Comportamentos possui as seguintes vantagens:
+- Os Decorators, presentes na BT, adicionam uma grande flexibilidade à estrutura da Árvore, podendo ser usados tanto para debug quanto para controlar as ações da árvore
+- Não precisamos nos preocupar com as transições entre os estados. Os N[os de Controle e Decorators já são implementados, apenas precisamos montar a estrutura da árvore e os nós folhas, podendo modificá-la facilmente com pouca ou nenhuma alteração no código fonte
+- A Árvore de Comportamentos é extremamente modular. Podemos utilizar classes genéricas para criar nossas Actions e Conditions, seja criando uma nova classe com Herança Múltipla, ou utilizando injeção de dependência
+- Devido à sua modularidade, estrutura de árvore hierárquica e não preocupação com as transições, podemos facilmente criar, modificar ou remover folhas à árvore, de maneira mais simples e fácil
+- A árvore pode ser criada e editada através de um arquivo XML ou direto de uma interfácie gráfica (o Groot), sendo de fácil construção
+- Estrutura mais organizada que a FSM, e de fácil compreensão, principalmente em casos que possuem diversos estados e muitas transições
+- Podemos utilizar ações assíncronas e paralelas
+
+Para uma comparação entre a BehaviorTree e FSM aplicadas à robótica, acesse o repositório:
+[BehaviorTree ROS](https://github.com/felipe18mohr/behavior_tree_ros)
+
