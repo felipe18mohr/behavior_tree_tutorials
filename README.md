@@ -4,9 +4,13 @@
 
 A Behavior Tree (ou Árvore de Comportamento) é um modelo para estruturar tomadas de decisão (Task Switching Structure), criado inicialmente para a área de robótica, mas também amplamente utilizado na indústria de jogos, para desenvolvimento da Inteligência Artificial das entidades dos games. 
 
+Este repositório contém uma descrição acerca do funcionamento das Behavior Trees, além dos códigos com tutoriais disponíveis na [documentação da Behavior Tree](https://www.behaviortree.dev/tutorials_summary/). Posteriormente, será feita também uma breve comparação entre a Behavior Tree e a Finit State Machine
+
 #### Documentação e repositórios oficiais
 **Github Behavior Tree:** [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP)
+
 **Github Groot:** [Groot](https://github.com/BehaviorTree/Groot)
+
 **Documentação:** [behaviortree.dev](https://www.behaviortree.dev/)
 
 ## Vantagens da Behavior Tree
@@ -50,6 +54,7 @@ Nós de Controle possuem um ou mais nós filhos. Quando ele é executado (dizemo
 #### SequenceNodes
 
 ![SequenceNode](img/sequencebasic.png)
+
 Os filhos desse Nó de Controle serão sempre executados em ordem (na representação gráfica acima, da esquerda para a direita), de forma que:  
 1. Quando um filho for executado, se ele retornar SUCCESS, o próximo filho será executado;  
 2. Se o filho, ao invés disso, retornar FAILURE, nenhum outro filho será executado, a Sequência será encerrada e retornará FAILURE;
@@ -114,4 +119,3 @@ Em comparação a outros modelos de Estrutura de Tomada de Decisões, como por e
 
 Para uma comparação entre a BehaviorTree e FSM aplicadas à robótica, acesse o repositório:
 [BehaviorTree ROS](https://github.com/felipe18mohr/behavior_tree_ros)
-
