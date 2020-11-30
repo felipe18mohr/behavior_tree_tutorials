@@ -4,7 +4,7 @@
 
 A Behavior Tree (ou Árvore de Comportamento) é um modelo para estruturar tomadas de decisão (Task Switching Structure), criado inicialmente para a área de robótica, mas também amplamente utilizado na indústria de jogos, para desenvolvimento da Inteligência Artificial das entidades dos games. 
 
-Este repositório contém uma descrição acerca do funcionamento das Behavior Trees, além dos códigos com tutoriais disponíveis na [documentação da Behavior Tree](https://www.behaviortree.dev/tutorials_summary/). Posteriormente, será feita também uma breve comparação entre a Behavior Tree e a Finit State Machine
+Este repositório contém uma descrição acerca do funcionamento das Behavior Trees, além dos códigos com tutoriais disponíveis na [documentação da Behavior Tree](https://www.behaviortree.dev/tutorials_summary/). Posteriormente, será feita também uma breve comparação entre a Behavior Tree e a Finite State Machine
 
 #### Documentação e repositórios oficiais
 **Github Behavior Tree:** [BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP)
